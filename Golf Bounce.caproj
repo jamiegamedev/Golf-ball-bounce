@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Golf Bounce</name>
+    <description>Golf Bounce Game</description>
+    <version>0.0.1</version>
+    <author>Jamie Game Dev</author>
+    <author-email>jamie@jamiegamedev.com</author-email>
+    <author-website>http://www.jamiegamedev.com</author-website>
+    <app-id>com.jgd.golfbounce</app-id>
+    <unique-id>ztl8st6d00fa</unique-id>
+    <saved-with-version>19500</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Clay.io" id="Clay" version="1">Clay.io</plugin>
+        <plugin author="Scirra" id="Facebook" version="1">Facebook</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="admob" version="1">Admob Ads</plugin>
+        <plugin author="Scirra" id="googleplay" version="1">Google Play</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
+        <behavior author="Scirra" id="custom" version="1">Custom Movement</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1536</width>
+        <height>2048</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>Start</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">High quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Portrait</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">CocoonJS native</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Ball" sid="7655953109634694">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="5178987554423825">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="Rotate" sid="3736448667063206">
+                    <behavior id="Rotate" />
+                </behavior-type>
+                <behavior-type name="CustomMovement" sid="6174124430316744">
+                    <behavior id="custom" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="3519306233679213">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="8222222807760408">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="172571221145421" speed="5">
+                    <frame duration="1" hotspotX="0.53125" hotspotY="0.53125" original-source="C:\Users\Jamie\Desktop\ball.png">
+                        <collision-poly>
+                            <point x="0.140625" y="0.140625" />
+                            <point x="0.5" y="0" />
+                            <point x="0.851563" y="0.148438" />
+                            <point x="1" y="0.5" />
+                            <point x="0.851563" y="0.851563" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148438" y="0.851563" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="pink" pingpong="0" repeatcount="1" repeatto="0" sid="591264997517247" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jamie\Desktop\pink.png">
+                        <collision-poly>
+                            <point x="0.140625" y="0.140625" />
+                            <point x="0.5" y="0" />
+                            <point x="0.859375" y="0.140625" />
+                            <point x="1" y="0.5" />
+                            <point x="0.851563" y="0.851563" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148438" y="0.851563" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="yellow" pingpong="0" repeatcount="1" repeatto="0" sid="1086412626630754" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jamie\Desktop\yellow.png">
+                        <collision-poly>
+                            <point x="0.140625" y="0.140625" />
+                            <point x="0.5" y="0" />
+                            <point x="0.859375" y="0.140625" />
+                            <point x="1" y="0.5" />
+                            <point x="0.851563" y="0.851563" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148438" y="0.851563" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="black" pingpong="0" repeatcount="1" repeatto="0" sid="6578243211437221" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jamie\Desktop\dark.png">
+                        <collision-poly>
+                            <point x="0.140625" y="0.140625" />
+                            <point x="0.5" y="0" />
+                            <point x="0.859375" y="0.140625" />
+                            <point x="1" y="0.5" />
+                            <point x="0.851563" y="0.851563" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148438" y="0.851563" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="blue" pingpong="0" repeatcount="1" repeatto="0" sid="7555120976251647" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jamie\Desktop\blue.png">
+                        <collision-poly>
+                            <point x="0.140625" y="0.140625" />
+                            <point x="0.5" y="0" />
+                            <point x="0.859375" y="0.140625" />
+                            <point x="1" y="0.5" />
+                            <point x="0.851563" y="0.851563" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148438" y="0.851563" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="5" loop="1" name="all" pingpong="0" repeatcount="1" repeatto="0" sid="6804565010524887" speed="20">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jamie\Documents\GitHub\Golf-Bounce\Golf ball bounce\Animations\Ball\Default\000.png">
+                        <collision-poly>
+                            <point x="0.15625" y="0.15625" />
+                            <point x="0.5" y="0" />
+                            <point x="0.84375" y="0.15625" />
+                            <point x="1" y="0.5" />
+                            <point x="0.84375" y="0.84375" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15625" y="0.84375" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jamie\Documents\GitHub\Golf-Bounce\Golf ball bounce\Animations\Ball\black\000.png">
+                        <collision-poly>
+                            <point x="0.15625" y="0.15625" />
+                            <point x="0.5" y="0" />
+                            <point x="0.84375" y="0.15625" />
+                            <point x="1" y="0.5" />
+                            <point x="0.84375" y="0.84375" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15625" y="0.84375" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jamie\Documents\GitHub\Golf-Bounce\Golf ball bounce\Animations\Ball\pink\000.png">
+                        <collision-poly>
+                            <point x="0.15625" y="0.15625" />
+                            <point x="0.5" y="0" />
+                            <point x="0.84375" y="0.15625" />
+                            <point x="1" y="0.5" />
+                            <point x="0.84375" y="0.84375" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15625" y="0.84375" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jamie\Documents\GitHub\Golf-Bounce\Golf ball bounce\Animations\Ball\yellow\000.png">
+                        <collision-poly>
+                            <point x="0.15625" y="0.15625" />
+                            <point x="0.5" y="0" />
+                            <point x="0.84375" y="0.15625" />
+                            <point x="1" y="0.5" />
+                            <point x="0.84375" y="0.84375" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15625" y="0.84375" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jamie\Documents\GitHub\Golf-Bounce\Golf ball bounce\Animations\Ball\blue\000.png">
+                        <collision-poly>
+                            <point x="0.15625" y="0.15625" />
+                            <point x="0.5" y="0" />
+                            <point x="0.84375" y="0.15625" />
+                            <point x="1" y="0.5" />
+                            <point x="0.84375" y="0.84375" />
+                            <point x="0.5" y="1" />
+                            <point x="0.15625" y="0.84375" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ButtonPlay" sid="2665942910247507">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Background" sid="953656317085853">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="20" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="5403016070098888" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jamie\Documents\GitHub\Golf-Bounce\Golf ball bounce\Animations\TitleImage\Default\000.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jamie\Documents\GitHub\Golf-Bounce\Golf ball bounce\Animations\TitleImage\Default\001.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jamie\Documents\GitHub\Golf-Bounce\Golf ball bounce\Animations\TitleImage\Default\002.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TopScore" sid="8463788785676717">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ButtonViewTutorial" sid="9906374471482009">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Browser" sid="669069303560179">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="Touch" sid="486488503983799">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="leftWall" sid="5640957753943198">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="6611628985695499">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1585279882421095" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="RightWall" sid="3234661831573034">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="1260889944373045">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4269669652340651" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite2" sid="2490930736111932">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9081579865562082" speed="15">
+                    <frame duration="1" hotspotX="0.5625" hotspotY="0.46875" original-source="C:\Users\Jamie\Desktop\tap1.png" />
+                    <frame duration="1" hotspotX="0.5625" hotspotY="0.4375" original-source="C:\Users\Jamie\Desktop\tap2.png" />
+                    <frame duration="1" hotspotX="0.625" hotspotY="0.25" original-source="C:\Users\Jamie\Desktop\tap3.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TitleImage" sid="5092814795100142">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="1419702009216942" speed="2">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jamie\Desktop\bg.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jamie\Desktop\bg2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jamie\Desktop\bg3.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="skybg" sid="5206822320517177">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1070075635011863" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bird" sid="8920774982182443">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="3789495372736673">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="3" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="5920219318141355" speed="5">
+                    <frame duration="1" hotspotX="0.508475" hotspotY="0.443038" original-source="C:\Users\Jamie\Desktop\birds.png" />
+                    <frame duration="1" hotspotX="0.464646" hotspotY="0.454545" original-source="C:\Users\Jamie\Desktop\birds1.png" />
+                    <frame duration="1" hotspotX="0.539877" hotspotY="0.637931" original-source="C:\Users\Jamie\Desktop\birds2.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TitleLogo" sid="6950735991458308">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8904953727392646" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jamie\Desktop\golfBounce.png">
+                        <collision-poly>
+                            <point x="0.169231" y="0.463158" />
+                            <point x="0.5" y="0.0789474" />
+                            <point x="0.803846" y="0.536842" />
+                            <point x="0.792308" y="0.5" />
+                            <point x="0.5" y="0.936842" />
+                            <point x="0.151923" y="0.584211" />
+                            <point x="0.159615" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Play" sid="7477742602257838">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5130640425203701" speed="5">
+                    <frame duration="1" hotspotX="0.475124" hotspotY="0.561947" original-source="C:\Users\Jamie\Desktop\play button.png">
+                        <collision-poly>
+                            <point x="0.00248756" y="0.20354" />
+                            <point x="0.472637" y="0.00442478" />
+                            <point x="0.977612" y="0.146018" />
+                            <point x="0.997512" y="0.561947" />
+                            <point x="0.945274" y="0.924779" />
+                            <point x="0.472637" y="0.995575" />
+                            <point x="0.0223881" y="0.889381" />
+                            <point x="0.00248756" y="0.561947" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Leaderboard" sid="1700695905213941">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7673494575678499" speed="5">
+                    <frame duration="1" hotspotX="0.475124" hotspotY="0.561947" original-source="C:\Users\Jamie\Desktop\leaderboard.png">
+                        <collision-poly>
+                            <point x="0.00248756" y="0.20354" />
+                            <point x="0.472637" y="0.00442478" />
+                            <point x="0.977612" y="0.146018" />
+                            <point x="0.997512" y="0.561947" />
+                            <point x="0.945274" y="0.924779" />
+                            <point x="0.472637" y="0.995575" />
+                            <point x="0.0223881" y="0.889381" />
+                            <point x="0.00248756" y="0.561947" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite" sid="9120788275782207">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="9627399913941604">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9250606818236109" speed="3">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LBUI" sid="6390422128996449">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2913297686657303" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.493182" original-source="C:\Users\Jamie\Desktop\laderboardimage.png">
+                        <collision-poly>
+                            <point x="0.0295455" y="0.0204545" />
+                            <point x="0.5" y="0.00227273" />
+                            <point x="0.970455" y="0.0204545" />
+                            <point x="0.997727" y="0.493182" />
+                            <point x="0.972727" y="0.968182" />
+                            <point x="0.5" y="0.997727" />
+                            <point x="0.0204545" y="0.975" />
+                            <point x="0.00227273" y="0.493182" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="menuButton" sid="8380168898569132">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5686311986216611" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jamie\Desktop\menu button.png">
+                        <collision-poly>
+                            <point x="0.0447761" y="0.079646" />
+                            <point x="0.5" y="0.00442478" />
+                            <point x="0.957711" y="0.0752212" />
+                            <point x="0.997512" y="0.5" />
+                            <point x="0.957711" y="0.924779" />
+                            <point x="0.5" y="0.995575" />
+                            <point x="0.0422886" y="0.924779" />
+                            <point x="0.00248756" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="GooglePlay" sid="7356338936852121">
+            <plugin id="googleplay" />
+        </object-type>
+        <object-type global="1" name="Array" sid="6908080640397713">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="AdmobAds" sid="4355200438946295">
+            <plugin id="admob" />
+        </object-type>
+        <object-type name="Facebook" sid="2570804594579678">
+            <plugin id="Facebook" />
+        </object-type>
+        <object-type name="Sprite4" sid="8445158900118662">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9745633457731737" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="USERID" sid="1644818107379158">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="Clayio" sid="8488831682848884">
+            <plugin id="Clay" />
+        </object-type>
+        <object-type name="Login" sid="1745656331760041">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="667388728312679" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jamie\Desktop\Construct Projects\Golf-Bounce-master\Golf ball bounce\Animations\login.png">
+                        <collision-poly>
+                            <point x="0.0447761" y="0.079646" />
+                            <point x="0.5" y="0.00442478" />
+                            <point x="0.957711" y="0.0752212" />
+                            <point x="0.997512" y="0.5" />
+                            <point x="0.957711" y="0.924779" />
+                            <point x="0.5" y="0.995575" />
+                            <point x="0.0422886" y="0.924779" />
+                            <point x="0.00248756" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Highscoretable" sid="1801361959845096">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TopScore2" sid="3502767813329945">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Rank" sid="6460742434673865">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="LOGOUT" sid="6323469026379708">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2681855416729842" speed="5">
+                    <frame duration="1" hotspotX="0.475124" hotspotY="0.561947" original-source="C:\Users\Jamie\Desktop\play button.png">
+                        <collision-poly>
+                            <point x="0.00248756" y="0.20354" />
+                            <point x="0.472637" y="0.00442478" />
+                            <point x="0.977612" y="0.146018" />
+                            <point x="0.997512" y="0.561947" />
+                            <point x="0.945274" y="0.924779" />
+                            <point x="0.472637" y="0.995575" />
+                            <point x="0.0223881" y="0.889381" />
+                            <point x="0.00248756" y="0.561947" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Start.xml</layout>
+        <layout>Game.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Game events.xml</event-sheet>
+        <event-sheet>Start events.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Browser" uid="11" />
+        <global-instance type="Touch" uid="12">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="GooglePlay" uid="19">
+            <properties>
+                <application-id></application-id>
+                <client-id></client-id>
+                <client-secret></client-secret>
+            </properties>
+        </global-instance>
+        <global-instance type="AdmobAds" uid="21">
+            <properties>
+                <overlap>Yes</overlap>
+                <test-mode>True</test-mode>
+                <android></android>
+                <banner-id-android></banner-id-android>
+                <interstitial-id-android></interstitial-id-android>
+                <ios></ios>
+                <banner-id-ios></banner-id-ios>
+                <interstitial-id-ios></interstitial-id-ios>
+                <windows-phone></windows-phone>
+                <banner-id-wp8></banner-id-wp8>
+                <interstitial-id-wp8></interstitial-id-wp8>
+            </properties>
+        </global-instance>
+        <global-instance type="Facebook" uid="23">
+            <properties>
+                <app-id>706448776097049</app-id>
+                <app-secret>51373c06c0420627e79c0cfca80c2e0d</app-secret>
+            </properties>
+        </global-instance>
+        <global-instance type="Clayio" uid="25">
+            <properties>
+                <api-key>golf1bounce</api-key>
+                <debug-mode>Disabled</debug-mode>
+                <use-clayio-styles>Enabled</use-clayio-styles>
+                <use-clayio-loader>Disabled</use-clayio-loader>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

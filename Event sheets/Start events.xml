@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Start events</name>
+    <events>
+        <event-block sid="8450924142424696">
+            <conditions>
+                <condition id="3" name="On touched object" sid="8769507891639029" type="Touch">
+                    <param id="0" name="Object">Play</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="1321255376915732" type="System">
+                    <param id="0" name="Layout">Game</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9477868613729744">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="7683705477677612" type="System">
+                    <param id="0" name="Interval (seconds)">random(1,5)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="1396827706736205" type="System">
+                    <param id="0" name="Object to create">bird</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">random( 1600, 1700)</param>
+                    <param id="3" name="Y">random(200,800)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="5969507467787596">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="9468703750708917" type="System" />
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" sid="1923216646108559" type="TitleImage">
+                    <param id="0" name="Width">WindowWidth</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3701579292121963">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="3453269633576173" type="System">
+                    <param id="0" name="Interval (seconds)">random(2,10)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="1985543712342863" type="System">
+                    <param id="0" name="Object to create">Sprite</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">1600</param>
+                    <param id="3" name="Y">random(350,600)</param>
+                </action>
+                <action id="-16" name="Wait" sid="7434032624850957" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="7317544230047928" type="TitleImage">
+                    <param id="0" name="Animation">&quot;default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9607348436713494">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="9144583947608304" type="System" />
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="952100521568056" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="9918160385837154">
+            <conditions>
+                <condition id="3" name="On touched object" sid="5525531823807154" type="Touch">
+                    <param id="0" name="Object">Play</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="9026585292061385" type="System">
+                    <param id="0" name="Layout">Game</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3906894967273113">
+            <conditions>
+                <condition id="3" name="On touched object" sid="2559302114237535" type="Touch">
+                    <param id="0" name="Object">Login</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="26" name="Prompt Login" sid="3457980975622231" type="Clayio" />
+            </actions>
+        </event-block>
+        <event-block sid="6766426340473891">
+            <conditions>
+                <condition id="15" name="On Login (From Prompt Action)" sid="6236733734247343" type="Clayio" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="6982079941271446" type="Login">
+                    <param id="0" name="X">-500</param>
+                    <param id="1" name="Y">-500</param>
+                </action>
+                <action id="-3" name="Set position" sid="5721938086341263" type="Play">
+                    <param id="0" name="X">480</param>
+                    <param id="1" name="Y">1824</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="843664600466474">
+            <conditions>
+                <condition id="3" name="On touched object" sid="3511638507789915" type="Touch">
+                    <param id="0" name="Object">LOGOUT</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="38" name="Prompt Logout" sid="6983118808949983" type="Clayio" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

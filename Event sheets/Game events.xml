@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Game events</name>
+    <events>
+        <variable constant="0" name="ten" sid="9951116347084245" static="0" type="number">10</variable>
+        <variable constant="0" name="balls" sid="1567978282046454" static="0" type="number">0</variable>
+        <variable constant="1" name="SecondsPerObstacle" sid="1617386090584892" static="0" type="number">1</variable>
+        <variable constant="1" name="JUMPSTRENGTH" sid="6706328064360653" static="0" type="number">1200</variable>
+        <variable comment="in pixels per second" constant="1" name="SCROLLSPEED" sid="218429142858833" static="0" type="number">300</variable>
+        <variable constant="0" name="Score" sid="1620992456180981" static="0" type="number">0</variable>
+        <event-group description="" sid="2140906227666016" title="Start">
+            <sub-events>
+                <event-block sid="2246972820014324">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="7552674298305292" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="7981695657209981" type="TopScore">
+                            <param id="0" name="Text">0</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="8858143142522444" type="TopScore">
+                            <param id="0" name="Family name">&quot;Erica One&quot;</param>
+                            <param id="1" name="CSS URL">&quot;http://fonts.googleapis.com/css?family=Erica+One&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5362289503657037" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="3452112360354654" type="Ball">
+                            <param id="0" name="Vector Y">-JUMPSTRENGTH</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="3978738267839223" type="Ball">
+                            <param id="0" name="Angle">320</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="1401058240807956" title="Movement">
+            <sub-events>
+                <comment>When we touch (or click) make the bird jump by setting a negative vector Y (as in, suddenly set the vertical speed to upwards).</comment>
+                <event-block any="1" sid="9923654974799748">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="8630474439530806" type="Touch">
+                            <param id="0" name="Object">Ball</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="8776672419371477" type="Ball">
+                            <param id="0" name="Vector Y">-JUMPSTRENGTH</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="1456474780628999" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5835706674949519">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="4188298902889423" type="Touch">
+                            <param id="0" name="Object">Ball</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="618823884590163" type="System">
+                            <param id="0" name="First value">Touch.X</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">Ball.X-10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="3091976434291205" type="Ball">
+                            <param id="0" name="Speed">random(20,400)</param>
+                        </action>
+                        <action behavior="CustomMovement" id="2" name="Set speed" sid="104359658251684" type="Ball">
+                            <param id="0" name="Which">1</param>
+                            <param id="1" name="Speed">random(250, 600)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8199606847061738">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="8610921249849409" type="Touch">
+                            <param id="0" name="Object">Ball</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="6518379961622882" type="System">
+                            <param id="0" name="First value">Touch.X</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">Ball.X+10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="10921574382134" type="Ball">
+                            <param id="0" name="Speed">random(20,-400)</param>
+                        </action>
+                        <action behavior="CustomMovement" id="2" name="Set speed" sid="9838863352835507" type="Ball">
+                            <param id="0" name="Which">1</param>
+                            <param id="1" name="Speed">random(-250, -600)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4545136460358">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="6128106319089667" type="Ball">
+                            <param id="0" name="Object">leftWall</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="CustomMovement" id="2" name="Set speed" sid="6078181406806095" type="Ball">
+                            <param id="0" name="Which">1</param>
+                            <param id="1" name="Speed">random(250,600)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6608002247414286">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="9747830968588289" type="Ball">
+                            <param id="0" name="Object">RightWall</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="CustomMovement" id="2" name="Set speed" sid="7056401164446545" type="Ball">
+                            <param id="0" name="Which">1</param>
+                            <param id="1" name="Speed">random(-250,-600)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="9558025647412417" title="Collisions">
+            <sub-events>
+                <event-block sid="9569398275688901">
+                    <conditions>
+                        <condition id="-4" name="Is outside layout" sid="3705447759395651" type="Ball" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="6508834298412794" type="Ball" />
+                        <action id="3" name="Post Leaderboard Score" sid="4060378825065233" type="Clayio">
+                            <param id="0" name="Player Name">Clayio.LeaderboardName</param>
+                            <param id="1" name="Player Score">Score</param>
+                            <param id="2" name="Leaderboard ID">5093</param>
+                            <param id="3" name="Show Notification">0</param>
+                        </action>
+                        <action id="16" name="Fetch Leaderboard Object" sid="4319010927653208" type="Clayio">
+                            <param id="0" name="Leaderboard ID">5093</param>
+                            <param id="1" name="Time Frame">0</param>
+                            <param id="2" name="High Score">0</param>
+                            <param id="3" name="Sort">0</param>
+                            <param id="4" name="Scores From">0</param>
+                            <param id="5" name="Number of Scores">5</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="4866920520309806" type="LBUI">
+                            <param id="0" name="X">782</param>
+                            <param id="1" name="Y">815.5</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="3859752962734976" type="Play">
+                            <param id="0" name="X">483</param>
+                            <param id="1" name="Y">1787.1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="7441111700717254" type="menuButton">
+                            <param id="0" name="X">1058</param>
+                            <param id="1" name="Y">1770.8</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="1350952429606786" type="TopScore2">
+                            <param id="0" name="X">300</param>
+                            <param id="1" name="Y">396.1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="3109063906646514" type="Rank">
+                            <param id="0" name="X">300</param>
+                            <param id="1" name="Y">1211.6</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8175485282583209">
+                            <conditions>
+                                <condition id="0" name="Clay.io Ready" sid="9791941882800383" type="Clayio" />
+                            </conditions>
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="834441123771069">
+                    <conditions>
+                        <condition id="7" name="Leaderboard Scores Fetched" sid="5779988787317291" type="Clayio" />
+                        <condition id="-10" name="For" sid="1748917433671591" type="System">
+                            <param id="0" name="Name">&quot;&quot;</param>
+                            <param id="1" name="Start index">0</param>
+                            <param id="2" name="End index">Clayio.leaderboardscorecount</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Append text" sid="7616980095465851" type="TopScore2">
+                            <param id="0" name="Text">Clayio.LeaderboardName(loopindex)&amp; &quot; &quot;&amp;&quot;Score:&quot;&amp;Clayio.LeaderboardScore(loopindex) &amp; newline &amp; newline</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block disabled="1" sid="3870234832933045">
+            <conditions>
+                <condition id="7" name="Leaderboard Scores Fetched" sid="6345529525115918" type="Clayio" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="8572312048214412" type="Rank">
+                    <param id="0" name="Text">&quot;Your Rank:&quot; &amp; &quot; &quot; &amp; Clayio.LeaderboardRank</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7630321415207411">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="9216980325306948" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="5211122771436443" type="TopScore">
+                    <param id="0" name="Text">&quot;Score : &quot; &amp; Score</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1371317083585786">
+            <conditions>
+                <condition id="4" name="On finished" sid="8159435766470765" type="Sprite2">
+                    <param id="0" name="Animation">&quot;default&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7275886514422266" type="Sprite2" />
+            </actions>
+        </event-block>
+        <event-block sid="4808884761015852">
+            <conditions>
+                <condition id="0" name="On any touch start" sid="6730377637515386" type="Touch" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="9173582659720217" type="System">
+                    <param id="0" name="Object to create">Sprite2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">Touch.X</param>
+                    <param id="3" name="Y">touch.y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8680801692432823">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="477068330923048" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">10</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="1122988540992533" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="1886984136897184" type="Ball">
+                    <param id="0" name="Animation">&quot;black&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="6" name="Award Achievement" sid="400252348939442" type="Clayio">
+                    <param id="0" name="Achievement ID">5609</param>
+                    <param id="1" name="Show Notification">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1148387900119801">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="6910285749773267" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">100</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="1094797934893372" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">250</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="1051924757098319" type="Ball">
+                    <param id="0" name="Animation">&quot;yellow&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="6" name="Award Achievement" sid="7823976467852006" type="Clayio">
+                    <param id="0" name="Achievement ID">5610</param>
+                    <param id="1" name="Show Notification">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1358410437969122">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="7281302292076885" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">250</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="9021021418348371" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">500</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="3376216156696839" type="Ball">
+                    <param id="0" name="Animation">&quot;blue&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="6" name="Award Achievement" sid="2654720552159248" type="Clayio">
+                    <param id="0" name="Achievement ID">5611</param>
+                    <param id="1" name="Show Notification">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4005715421393387">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4360379493846021" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">500</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="612074749197619" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">1000</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="7305589471606423" type="Ball">
+                    <param id="0" name="Animation">&quot;pink&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="6" name="Award Achievement" sid="845262428440342" type="Clayio">
+                    <param id="0" name="Achievement ID">5612</param>
+                    <param id="1" name="Show Notification">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8657538347387279">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2190724739694906" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">1000</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="4514498981884083" type="Ball">
+                    <param id="0" name="Animation">&quot;all&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="6" name="Award Achievement" sid="381828558460054" type="Clayio">
+                    <param id="0" name="Achievement ID">5613</param>
+                    <param id="1" name="Show Notification">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7936498073513801">
+            <conditions>
+                <condition id="3" name="On touched object" sid="2868570607479529" type="Touch">
+                    <param id="0" name="Object">Play</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="617314580555708" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="5897840286138428" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="191213462148046">
+            <conditions>
+                <condition id="3" name="On touched object" sid="6478128457083733" type="Touch">
+                    <param id="0" name="Object">menuButton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="9819883728216547" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="5623944899470978" type="System">
+                    <param id="0" name="Layout">Start</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1033699116558016">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="2663656781511581" type="System">
+                    <param id="0" name="Interval (seconds)">random(8,15)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="1326381483535257" type="Background">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="1926369947747806">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="8371634958443659" type="System">
+                    <param id="0" name="Variable">balls</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="7405334600444144" type="System">
+                    <param id="0" name="Variable">balls</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="4784723613917249" type="System">
+                    <param id="0" name="Object to create">Ball</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">500</param>
+                    <param id="3" name="Y">500</param>
+                </action>
+                <action id="-9" name="Set value" sid="321083681451697" type="System">
+                    <param id="0" name="Variable">balls</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="1603353703216556">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9250511961744276" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="7980992538734623" type="System">
+                    <param id="0" name="Variable">balls</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9737488668118982">
+            <conditions>
+                <condition id="15" name="On Login (From Prompt Action)" sid="5284691688427061" type="Clayio" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="7230885751599823" type="Login">
+                    <param id="0" name="X">-500</param>
+                    <param id="1" name="Y">-500</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
